@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Novo plano de saúde Amil · Guia do colaborador ElevaLife</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;
+  --surface:#FFFFFF;
+  --soft:#F9EFEE;
+  --ink:#3E1A21;
+  --ink-soft:#6E5459;
+  --brand:#8D3F4A;
+  --brand-ink:#FFFFFF;
+  --brand-2:#A5555F;
+  --brand-tint:#F9EFEE;
+  --coral:#E5444A;
+  --peach:#FBD3C6;
+  --sun:#E5444A;
+  --sun-tint:#FDEBE6;
+  --alert:#E5444A;
+  --alert-tint:#FCE4E4;
+  --line:#EAD9D8;
+  --shadow:none;
+  --display:"Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+  --text:"Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#1E1215; --surface:#2A191D; --soft:#35202A; --ink:#F6E9E8; --ink-soft:#C7AEB1;
+    --brand:#D98591; --brand-ink:#2A1015; --brand-2:#A5555F; --brand-tint:#3A2229;
+    --coral:#F06A6F; --peach:#FBD3C6; --sun:#F06A6F; --sun-tint:#3D2224; --alert:#F27C7F; --alert-tint:#3E2224; --line:#4A2E35;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#1E1215; --surface:#2A191D; --soft:#35202A; --ink:#F6E9E8; --ink-soft:#C7AEB1;
+  --brand:#D98591; --brand-ink:#2A1015; --brand-2:#A5555F; --brand-tint:#3A2229;
+  --coral:#F06A6F; --peach:#FBD3C6; --sun:#F06A6F; --sun-tint:#3D2224; --alert:#F27C7F; --alert-tint:#3E2224; --line:#4A2E35;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+a{color:var(--brand);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--coral);outline-offset:2px;border-radius:6px}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+
+/* Top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:58px}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo img{height:30px;width:auto;display:block}
+.logo .lw{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .logo .lc{display:none}:root:not([data-theme="light"]) .logo .lw{display:block}}
+:root[data-theme="dark"] .logo .lc{display:none}:root[data-theme="dark"] .logo .lw{display:block}
+.top-cta{font-weight:600;font-size:14px;background:var(--coral);color:#fff;text-decoration:none;padding:9px 14px;border-radius:999px;white-space:nowrap}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);background:linear-gradient(160deg,#94454F 0%,#8D3F4A 45%,#7C3540 100%);color:#fff;border-radius:0 0 32px 32px}
+.hero::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;border:1.5px solid rgba(255,255,255,.14);right:-120px;top:-130px}
+.hero::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.06);right:-40px;bottom:-90px}
+.hero .hero-in{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:44px 22px 40px}
+.hero .dot{position:absolute;border-radius:50%}
+.hero .dot.p{width:14px;height:14px;background:#FBD3C6;right:72px;top:58px}
+.hero .dot.c{width:9px;height:9px;background:#E5444A;right:44px;top:96px}
+.hero .for{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin:0 0 12px;color:#FBD3C6}
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(30px,7.6vw,44px);line-height:1.12;letter-spacing:-.02em;margin:0 0 14px;max-width:12em}
+.hero h1 em{font-style:normal;font-weight:700;color:#FBD3C6}
+.hero p.lead{font-size:15.5px;line-height:1.6;margin:0 0 24px;max-width:30em;color:rgba(255,255,255,.86)}
+.hero .hl{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.hero .hl li{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);padding:7px 12px;border-radius:999px}
+.hero .hl li::before{content:"";width:6px;height:6px;border-radius:50%;background:#FBD3C6}
+@media (min-width:760px){.hero{border-radius:0 0 48px 48px}.hero .hero-in{padding:64px 18px 56px}}
+
+.switch{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;background:var(--soft);border-radius:4px 18px 4px 18px;overflow:hidden;margin-top:24px}
+.switch .side{padding:16px 16px 18px}
+.switch .side small{display:block;font-size:13px;font-weight:600;color:var(--ink-soft)}
+.switch .date{font-family:var(--display);font-weight:800;font-size:clamp(34px,10vw,50px);line-height:1;letter-spacing:-.03em;margin:6px 0 6px}
+.switch .old .date{color:var(--ink-soft);text-decoration:line-through;text-decoration-thickness:3px;text-decoration-color:var(--coral)}
+.switch .new{background:var(--brand);color:var(--brand-ink)}
+.switch .new small{color:inherit;opacity:.85}
+.switch .arrow{display:flex;align-items:center;justify-content:center;padding:0 2px;background:linear-gradient(90deg,var(--soft) 50%,var(--brand) 50%)}
+.switch .arrow span{width:34px;height:34px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font-weight:800}
+.switch .what{font-size:14.5px;line-height:1.35}
+
+/* Steps */
+.start{margin:30px 0 6px}
+.start h2,.group h2{font-family:var(--display);font-weight:700;font-size:23px;letter-spacing:-.01em;margin:0 0 12px;color:var(--brand)}
+.group h2::after{content:"";display:block;width:44px;height:4px;border-radius:4px;background:var(--coral);margin-top:8px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;background:var(--soft);border-radius:4px 16px 4px 16px;padding:14px}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:22px;width:44px;height:44px;border-radius:12px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center}
+.steps b{display:block;font-size:16px;color:var(--brand)}
+.steps span{color:var(--ink-soft);font-size:15.5px}
+.store{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.store a{font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--brand);border-radius:999px;padding:7px 12px}
+
+/* Search + chips */
+.finder{position:sticky;top:calc(env(safe-area-inset-top,0px) + 58px);z-index:15;background:var(--bg);padding:14px 0 10px;margin-top:22px;border-bottom:1px solid var(--line)}
+.search{display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:0 12px}
+.search svg{width:20px;height:20px;flex:none;color:var(--ink-soft)}
+.search input{flex:1;border:0;background:transparent;color:var(--ink);font:inherit;font-size:16px;padding:12px 0;min-width:0}
+.search input::placeholder{color:var(--ink-soft)}
+.search input:focus{outline:none}
+.search:focus-within{border-color:var(--brand)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:none;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:7px 13px;border-radius:999px}
+
+/* FAQ */
+.group{margin-top:34px}
+.group > p.intro{color:var(--ink-soft);margin:-4px 0 14px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:16px;margin-bottom:10px;box-shadow:var(--shadow)}
+details[open]{border-color:var(--brand)}
+summary{list-style:none;cursor:pointer;padding:15px 48px 15px 16px;position:relative;font-weight:600;font-size:16px;line-height:1.4;color:var(--ink)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:18px;top:50%;width:10px;height:10px;border-right:2.5px solid var(--brand);border-bottom:2.5px solid var(--brand);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+@media (prefers-reduced-motion: reduce){summary::after{transition:none}}
+.ans{padding:0 16px 16px;color:var(--ink)}
+.ans p{margin:0 0 10px}
+.ans ul,.ans ol{margin:0 0 10px;padding-left:22px}
+.ans li{margin-bottom:6px}
+.ans p:last-child,.ans ul:last-child,.ans ol:last-child{margin-bottom:0}
+
+.note{border-radius:12px;padding:12px 14px;margin:10px 0;font-size:15.5px}
+.note.tip{background:var(--sun-tint)}
+.note.warn{background:var(--alert-tint)}
+.note.info{background:var(--brand-tint)}
+.note strong{display:block;margin-bottom:2px}
+
+.tbl{overflow-x:auto;margin:8px 0 10px;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-weight:600;color:var(--brand)}
+tr:last-child td{border-bottom:0}
+td.num{font-weight:700;min-width:96px}
+
+.empty{display:none;text-align:center;color:var(--ink-soft);padding:24px 0}
+.empty.show{display:block}
+.hide{display:none!important}
+
+/* Contacts */
+.contacts{display:grid;gap:10px}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.contact h3{margin:0 0 4px;font-size:17px}
+.contact p{margin:0;color:var(--ink-soft);font-size:15.5px}
+.contact a.big{display:inline-block;margin-top:6px;font-family:var(--display);font-weight:700;font-size:21px;text-decoration:none}
+.contact.rh{background:#8D3F4A;color:#fff;border-color:#8D3F4A}
+.contact.rh p{color:inherit;opacity:.9}
+.contact.rh a{color:inherit}
+
+.mats{display:grid;gap:10px}
+.mat{display:grid;grid-template-columns:46px 1fr 28px;align-items:center;gap:14px;padding:14px 16px;border-radius:16px;background:var(--soft);color:var(--ink);text-decoration:none;border:1.5px solid transparent;transition:transform .15s,border-color .15s}
+.mat:hover{border-color:var(--brand)}
+.mat:active{transform:scale(.98)}
+.mat .ic{width:46px;height:46px;border-radius:12px;background:var(--surface);color:var(--brand);display:grid;place-items:center}
+.mat .ic svg{width:22px;height:22px}
+.mat .tx b{display:block;font-size:15.5px;font-weight:600;line-height:1.3}
+.mat .tx small{display:block;font-size:13.5px;color:var(--ink-soft);line-height:1.35;margin-top:2px}
+.mat .go{width:28px;height:28px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:15px;font-weight:600}
+.mat.feat{background:#8D3F4A;color:#fff}
+.mat.feat .ic{background:#E5444A;color:#fff}
+.mat.feat .tx small{color:rgba(255,255,255,.8)}
+.mat.feat .go{background:#FBD3C6;color:#8D3F4A}
+@media (prefers-reduced-motion: reduce){.mat{transition:none}}
+@media (min-width:640px){.mats{grid-template-columns:1fr 1fr}.mat.feat{grid-column:1/-1}}
+.dp-links{display:grid;gap:8px;margin-top:12px}
+.dp-links a{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:11px 14px;text-decoration:none;font-weight:600;font-size:15.5px;word-break:break-word}
+.dp-links svg{width:22px;height:22px;flex:none}
+.dp-links small{display:block;font-size:12px;font-weight:500;opacity:.8}
+footer{margin:40px 0 30px;font-size:13px;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+mark{background:var(--peach);color:#3E1A21;border-radius:3px;padding:0 2px}
+@media (min-width:640px){
+  .switch .side{padding:22px 24px}
+  .contacts{grid-template-columns:1fr 1fr}
+  .contact.rh{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="ElevaLife, voltar ao início"><img class="lc" src="data:image/png;base64,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" alt="elevalife"><img class="lw" src="data:image/png;base64,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" alt="elevalife"></a>
+    <a class="top-cta" href="https://wa.me/5511990246860" target="_blank" rel="noopener">Falar com o DP</a>
+  </div>
+</header>
+
+<main class="wrap" id="inicio">
+
+  <section class="hero">
+    <span class="dot p" aria-hidden="true"></span>
+    <span class="dot c" aria-hidden="true"></span>
+    <div class="hero-in">
+      <p class="for">Guia do colaborador</p>
+      <h1>Seu novo plano de saúde é <em>Amil</em></h1>
+      <p class="lead">Tudo o que você precisa saber para usar o plano com tranquilidade, em um só lugar. Volte aqui sempre que precisar.</p>
+      <ul class="hl" aria-label="Destaques">
+        <li>App e carteirinha digital</li>
+        <li>Telemedicina 24h</li>
+        <li>Odonto 12 meses grátis</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="start" aria-labelledby="comece">
+    <h2 id="comece">Comece por aqui</h2>
+    <ol class="steps">
+      <li><div><b>Baixe o app Amil Clientes</b><span>É por ele que você usa quase tudo: carteirinha, rede, agendamentos e reembolso.</span>
+        <div class="store">
+          <a href="https://play.google.com/store/search?q=amil%20clientes&c=apps&hl=pt_BR&gl=US" target="_blank" rel="noopener">Android</a>
+          <a href="https://apps.apple.com/br/app/amil-clientes/id471890526" target="_blank" rel="noopener">iPhone</a>
+          <a href="https://youtu.be/ayLR6K9RaVI?si=hYI0B0mTb0Oto5xg" target="_blank" rel="noopener">Vídeo passo a passo</a>
+        </div></div></li>
+      <li><div><b>Faça o primeiro acesso</b><span>Use seu CPF, crie sua senha e confirme seus dados. Detalhes logo abaixo, em “Primeiro acesso”.</span></div></li>
+      <li><div><b>Abra sua carteirinha digital</b><span>Confira seu nome, seu plano e o dos seus dependentes. Viu algo errado? Fale com o DP.</span></div></li>
+    </ol>
+  </section>
+
+  <div class="finder" role="search">
+    <label class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Busque: carteirinha, farmácia, telemedicina…" autocomplete="off" aria-label="Buscar nas perguntas">
+    </label>
+    <nav class="chips" aria-label="Assuntos">
+      <a href="#troca">A troca</a>
+      <a href="#app">App e carteirinha</a>
+      <a href="#usar">Usar o plano</a>
+      <a href="#custos">Custos</a>
+      <a href="#odonto">Odonto</a>
+      <a href="#meuplano">Meu plano</a>
+      <a href="#dependentes">Dependentes e saída</a>
+      <a href="#materiais">Materiais</a>
+      <a href="#contatos">Contatos</a>
+    </nav>
+  </div>
+
+  <p class="empty" id="empty">Não achamos nada com essa palavra. Tente outra ou <a href="#contatos">fale com o DP</a>.</p>
+
+  <!-- ============ A TROCA ============ -->
+  <section class="group" id="troca">
+    <h2>A troca de Hapvida para Amil</h2>
+
+    <details>
+      <summary>Até quando posso usar o Hapvida?</summary>
+      <div class="ans">
+        <p>O cancelamento do Hapvida já foi solicitado. Ele funciona até <b>09/11</b>. A partir de <b>10/11</b>, todas as consultas, exames, terapias e atendimentos devem ser feitos pela Amil.</p>
+        <div class="note warn"><strong>Não use a carteirinha Hapvida depois de 09/11</strong>Atendimentos feitos após essa data não terão cobertura e podem gerar cobrança.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Tenho consulta ou exame marcado no Hapvida para depois de 09/11. E agora?</summary>
+      <div class="ans">
+        <p>Ele precisa ser remarcado em um local que atenda a Amil. Antes de remarcar, confira no app Amil se o médico, a clínica ou o laboratório fazem parte da rede do seu plano.</p>
+        <p>Guarde seus pedidos médicos e resultados de exames: eles ajudam o novo médico a dar continuidade ao seu cuidado.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Estou em tratamento contínuo (terapia, acompanhamento). O que faço?</summary>
+      <div class="ans">
+        <p>Procure já no app Amil um profissional ou clínica da rede do seu plano e agende para depois de 09/11. Para terapias (psicologia, fisioterapia, fonoaudiologia, terapia ocupacional), leia também <a href="#usar">“Terapias têm regras especiais?”</a>.</p>
+        <p>Se tiver dificuldade para encontrar atendimento, fale com o DP.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Preciso cumprir carência na Amil?</summary>
+      <div class="ans">
+        <p>A carência no plano médico é analisada <b>individualmente</b>, para cada colaborador e cada dependente. Ela pode variar conforme a sua situação, como a data em que você entrou no plano ou se você tinha outro plano antes.</p>
+        <div class="note info"><strong>Quer saber a sua?</strong><a href="#contatos">Fale com o DP da ElevaLife</a> e confirme a carência que vale para você e seus dependentes antes de agendar procedimentos.</div>
+        <p>O plano odontológico tem regras próprias de carência. Veja em <a href="#odonto">Odonto</a>.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ APP ============ -->
+  <section class="group" id="app">
+    <h2>App e carteirinha</h2>
+
+    <details>
+      <summary>Como faço o primeiro acesso?</summary>
+      <div class="ans">
+        <ol>
+          <li>Baixe o app <b>Amil Clientes</b> (<a href="https://play.google.com/store/search?q=amil%20clientes&c=apps&hl=pt_BR&gl=US" target="_blank" rel="noopener">Android</a> ou <a href="https://apps.apple.com/br/app/amil-clientes/id471890526" target="_blank" rel="noopener">iPhone</a>).</li>
+          <li>Toque na opção de primeiro acesso / cadastro.</li>
+          <li>Informe seu CPF e os dados pedidos (como data de nascimento e e-mail).</li>
+          <li>Crie sua senha e confirme pelo código que chegar no e-mail ou SMS.</li>
+          <li>Se o app pedir, faça a validação com foto do rosto (biometria). Ela é usada para confirmar que é você na hora do atendimento.</li>
+          <li><b>Ative as notificações do app.</b> É por elas que chega o token de segurança pedido nos atendimentos.</li>
+        </ol>
+        <p>Prefere ver antes? Assista ao <a href="https://youtu.be/ayLR6K9RaVI?si=hYI0B0mTb0Oto5xg" target="_blank" rel="noopener">vídeo passo a passo da Amil</a>.</p>
+        <div class="note tip"><strong>Dependentes</strong>Cada dependente maior de idade pode criar o próprio acesso com o CPF dele. Os dependentes menores ficam visíveis no app do titular.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Onde encontro minha carteirinha digital?</summary>
+      <div class="ans">
+        <p>Depois de entrar no app, a carteirinha aparece na tela inicial ou no menu de carteirinha. Lá você vê seu número de beneficiário, o nome do seu plano e a rede de atendimento.</p>
+        <p>A carteirinha da Amil é <b>digital</b>. Você não precisa esperar um cartão físico para usar o plano.</p>
+        <div class="note tip"><strong>Dica</strong>Tire um print da carteirinha e deixe salvo no celular. Ajuda quando a internet estiver fraca. Mesmo assim, alguns locais vão pedir a validação pelo app.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>O que levar no dia do atendimento?</summary>
+      <div class="ans">
+        <ul>
+          <li>Carteirinha digital (no app).</li>
+          <li>Documento oficial com foto.</li>
+          <li>Celular com o app funcionando. Para confirmar o atendimento, o local pode pedir:
+            <ul>
+              <li><b>Token:</b> código de 6 dígitos que a Amil envia pelo app e por e-mail a cada consulta, exame ou internação;</li>
+              <li><b>QR Code:</b> o atendente mostra um código, e você abre o app e aponta a câmera para ele;</li>
+              <li><b>Biometria facial</b> pelo app.</li>
+            </ul>
+          </li>
+          <li>Para exames e procedimentos: o pedido médico e, quando for o caso, a autorização da Amil.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Onde consulto o contrato do plano?</summary>
+      <div class="ans">
+        <p>O contrato é coletivo empresarial <b>Amil 703 PME</b>, operadora Amil Assistência Médica Internacional S.A. (registro ANS 326305).</p>
+        <p>A Amil envia ao titular o <b>Guia de Leitura Contratual</b>, um resumo que mostra em que página do contrato está cada assunto (carência, coberturas, reajuste, cancelamento). Você também pode pedir ao DP uma cópia do contrato e do Manual de Orientação para Contratação de Planos de Saúde.</p>
+        <p>Este guia é um resumo para facilitar o dia a dia. Em caso de diferença, vale o que está no contrato.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ USAR ============ -->
+  <section class="group" id="usar">
+    <h2>Usando o plano</h2>
+
+    <details>
+      <summary>Como sei quais médicos, clínicas e hospitais atendem meu plano?</summary>
+      <div class="ans">
+        <ol>
+          <li>No app Amil Clientes, entre na opção de rede credenciada.</li>
+          <li>Confirme que o plano selecionado é o seu (ele aparece na carteirinha).</li>
+          <li>Escolha estado, cidade e bairro.</li>
+          <li>Escolha o tipo de atendimento (consulta, exame, hospital, pronto-socorro) e a especialidade.</li>
+        </ol>
+        <p>Também dá para consultar no site <a href="https://www.amil.com.br" target="_blank" rel="noopener">amil.com.br</a>.</p>
+        <div class="note warn"><strong>Cada plano tem a sua rede</strong>Um hospital pode atender Prata e não atender Bronze, por exemplo. Sempre pesquise pelo seu plano, não pelo nome “Amil” de forma geral.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Antes de marcar uma consulta: o que conferir?</summary>
+      <div class="ans">
+        <ul>
+          <li><b>Confira na rede do app</b> se o profissional ou local atende o seu plano específico.</li>
+          <li><b>Ao ligar, diga o nome completo do seu plano</b> (ex.: “Amil Bronze SP Mais”), não só “Amil”.</li>
+          <li><b>Pergunte se a especialidade</b> que você precisa é atendida pelo plano naquele endereço. Às vezes a clínica atende uma especialidade e não outra.</li>
+          <li><b>Exames e procedimentos precisam de autorização prévia</b> da Amil (menos em urgência e emergência). Normalmente o próprio local pede; confirme antes de ir.</li>
+          <li><b>Leve documento com foto</b> e o celular com o app.</li>
+          <li>Se for terapia, oftalmologia ou oncologia, leia a pergunta seguinte.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Terapias, oftalmologia e oncologia têm regras especiais?</summary>
+      <div class="ans">
+        <p>Sim. No contrato da Amil, alguns atendimentos só têm cobertura na rede que a Amil <b>indica (direciona)</b> para eles. Entre eles:</p>
+        <ul>
+          <li>Psicologia, psicoterapia, fonoaudiologia, terapia ocupacional e fisioterapia;</li>
+          <li>Consultas e exames de oftalmologia;</li>
+          <li>Consultas e exames de oncologia, quimioterapia e radioterapia;</li>
+          <li>Algumas cirurgias (coluna, cardíacas, próteses ortopédicas, bariátrica, entre outras).</li>
+        </ul>
+        <p>Na prática: antes de agendar, busque o profissional pela rede do app ou ligue para a Amil e pergunte qual prestador atende o seu caso. Terapias também têm coparticipação; veja em <a href="#custos">Custos</a>.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Como agendar consulta pela internet?</summary>
+      <div class="ans">
+        <p>A Amil permite agendar on-line consultas e exames na <b>rede própria Amil</b>, pelo app ou pelo site.</p>
+        <ol>
+          <li>Entre no app Amil Clientes.</li>
+          <li>Procure a opção de agendamento.</li>
+          <li>Escolha a especialidade, o local, o dia e o horário.</li>
+          <li>Confirme e guarde a confirmação.</li>
+        </ol>
+        <p>Para médicos e clínicas credenciados que não são da rede própria, o agendamento é feito direto com o consultório, por telefone ou pelo canal deles.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Posso ser atendido por vídeo (telemedicina)?</summary>
+      <div class="ans">
+        <p>Sim. A <b>Telemedicina Amil</b> tem pronto atendimento por videochamada, <b>24 horas por dia, 7 dias por semana</b>, sem agendamento. O médico pode passar receita e atestado quando necessário.</p>
+        <ol>
+          <li>Entre no app Amil Clientes.</li>
+          <li>No menu de baixo, toque em <b>Rede</b> e depois em <b>Telemedicina Amil</b>.</li>
+          <li>Escolha <b>Pronto Atendimento</b>.</li>
+          <li>Leia os termos e toque em <b>Concordo</b>.</li>
+        </ol>
+        <div class="note tip"><strong>Boa opção para casos leves</strong>Gripe, febre baixa, dúvidas sobre sintomas. Em caso grave (falta de ar, dor no peito, desmaio), vá direto ao pronto-socorro ou ligue 192.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Em quanto tempo a Amil precisa me atender?</summary>
+      <div class="ans">
+        <p>A ANS define prazos máximos para a operadora garantir o atendimento na rede do seu plano:</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Atendimento</th><th>Prazo máximo</th></tr></thead>
+          <tbody>
+            <tr><td>Urgência e emergência</td><td class="num">Imediato</td></tr>
+            <tr><td>Consulta em clínica médica, pediatria, ginecologia e obstetrícia, cirurgia geral</td><td class="num">7 dias úteis</td></tr>
+            <tr><td>Consulta nas demais especialidades</td><td class="num">14 dias úteis</td></tr>
+            <tr><td>Psicologia, fisioterapia, fonoaudiologia, nutrição, terapia ocupacional</td><td class="num">10 dias úteis</td></tr>
+            <tr><td>Exames de laboratório</td><td class="num">3 dias úteis</td></tr>
+            <tr><td>Demais exames e terapias ambulatoriais</td><td class="num">10 dias úteis</td></tr>
+            <tr><td>Internação eletiva (programada)</td><td class="num">21 dias úteis</td></tr>
+          </tbody>
+        </table></div>
+        <p>O prazo vale para algum profissional da rede, não necessariamente o médico que você escolheu. Se não conseguir dentro do prazo, ligue para a Amil e guarde o número de protocolo.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Urgência ou emergência: para onde vou?</summary>
+      <div class="ans">
+        <p>Procure o pronto-socorro de um hospital da rede do seu plano (consulte no app). Em risco de vida, vá ao hospital mais próximo ou ligue <b>192 (SAMU)</b>.</p>
+        <div class="note info"><strong>Plano Bronze fora da sua região</strong>Os planos Bronze atendem em um grupo de cidades. Se você estiver viajando pelo Brasil, fora da área do plano, e tiver uma urgência, ligue antes para a central de assistência: <a href="tel:08007779147">0800 777 9147</a> ou WhatsApp <a href="https://wa.me/5511942318971" target="_blank" rel="noopener">(11) 94231-8971</a>. Esse serviço não vale para consultas e exames de rotina.</div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ CUSTOS ============ -->
+  <section class="group" id="custos">
+    <h2>Custos</h2>
+
+    <details>
+      <summary>Quando começa o desconto da Amil na minha folha?</summary>
+      <div class="ans">
+        <p>Para quem tem participação no plano descontada em folha, os descontos da Amil na folha de pagamento começam a partir de <b>novembro de 2026</b>.</p>
+        <p>O valor aparece no seu holerite. Qualquer dúvida sobre o valor, fale com o DP.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>O que é coparticipação e quando eu pago?</summary>
+      <div class="ans">
+        <p>Coparticipação é uma parte do valor de alguns atendimentos que fica por conta de quem usou. No nosso plano ela é <b>parcial</b>: a maioria dos atendimentos <b>não tem</b> coparticipação.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Atendimento</th><th>Você paga</th></tr></thead>
+          <tbody>
+            <tr><td>Consultas (eletivas e pronto-socorro)</td><td class="num">R$ 0</td></tr>
+            <tr><td>Exames básicos e especiais</td><td class="num">R$ 0</td></tr>
+            <tr><td>Procedimentos</td><td class="num">R$ 0</td></tr>
+            <tr><td>Internação</td><td class="num">R$ 0</td></tr>
+            <tr><td>Fisioterapia, fonoaudiologia, nutrição, psicoterapia, terapia ocupacional</td><td class="num">40%, até R$ 60 por sessão</td></tr>
+            <tr><td>Quimioterapia, radioterapia, diálise/hemodiálise</td><td class="num">R$ 0</td></tr>
+          </tbody>
+        </table></div>
+        <p>Regra válida para os planos Bronze SP, Bronze SP Mais, Prata e Ouro do nosso contrato. Em internação psiquiátrica, a partir do 31º dia há coparticipação de 50%, conforme a legislação.</p>
+        <p>Os descontos em folha começam a partir de <b>novembro de 2026</b>. Como a Amil cobra a coparticipação da empresa só depois que o atendimento é processado, o valor de um uso pode aparecer na sua folha no mês seguinte ou depois.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Quanto vou pagar numa sessão de terapia?</summary>
+      <div class="ans">
+        <p>Você paga 40% do valor que a Amil paga pela sessão, com teto de <b>R$ 60 por sessão</b>.</p>
+        <ul>
+          <li>Sessão de R$ 100 → você paga <b>R$ 40</b>.</li>
+          <li>Sessão de R$ 150 → 40% seria R$ 60 → você paga <b>R$ 60</b>.</li>
+          <li>Sessão de R$ 200 → 40% seria R$ 80, mas o teto é R$ 60 → você paga <b>R$ 60</b>.</li>
+        </ul>
+        <p>Vale para fisioterapia, fonoaudiologia, nutrição, psicoterapia e terapia ocupacional. Se você faz várias sessões no mês, cada uma conta separadamente. O valor do teto pode ser atualizado no aniversário do contrato.</p>
+        <div class="note tip"><strong>Antes de começar</strong>Lembre que terapias seguem a rede indicada pela Amil (veja “Terapias, oftalmologia e oncologia têm regras especiais?”).</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Meu plano tem reembolso?</summary>
+      <div class="ans">
+        <p><b>Bronze e Prata: não têm reembolso.</b> O atendimento é feito só na rede credenciada do plano.</p>
+        <p><b>Ouro: tem reembolso</b> para consultas e honorários médicos fora da rede, até o limite da tabela da Amil (o reembolso pode ser menor que o valor que você pagou).</p>
+        <p>Em qualquer plano, em urgência ou emergência comprovada em que não foi possível usar a rede, pode haver ressarcimento dentro dos limites do contrato.</p>
+        <p>Não sabe qual é o seu plano? Ele aparece na carteirinha digital.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Como pedir reembolso?</summary>
+      <div class="ans">
+        <ol>
+          <li>Guarde a nota fiscal ou recibo com nome do paciente, CPF/CNPJ e CRM do profissional, descrição do atendimento, valor e data.</li>
+          <li>Faça o pedido pelo app Amil Clientes, enviando os documentos.</li>
+          <li>Acompanhe pelo app. A Amil pode pedir documentos extras.</li>
+        </ol>
+        <div class="note warn"><strong>Dados bancários: atenção</strong>Cadastre a conta bancária na primeira solicitação. O cadastro deve ser feito <b>pelo titular do plano</b>. <b>Bancos digitais não são aceitos</b> pela Amil para pagamento de reembolso.</div>
+        <ul>
+          <li>Pagamento em até 30 dias após a entrega de toda a documentação.</li>
+          <li>Prazo para pedir: até 12 meses depois do atendimento. Depois disso, perde-se o direito.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ ODONTO ============ -->
+  <section class="group" id="odonto">
+    <h2>Plano odontológico</h2>
+
+    <details>
+      <summary>Tenho plano odontológico? Quanto custa?</summary>
+      <div class="ans">
+        <p>Sim. Todos os incluídos no plano médico têm o <b>Dental Bronze PJ Promo</b>, com cobertura nacional e sem coparticipação.</p>
+        <p>Ele é <b>gratuito pelos primeiros 12 meses</b>, contados do início do plano médico. Depois desse período, passa a ter mensalidade. O DP vai avisar com antecedência como fica a partir daí.</p>
+        <p>Enquanto for promocional, o odonto acompanha o plano médico: se o plano médico for cancelado, o odonto também é.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>O odonto tem carência?</summary>
+      <div class="ans">
+        <p>Sim. O odonto promocional segue as carências do contrato:</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Atendimento</th><th>Carência</th></tr></thead>
+          <tbody>
+            <tr><td>Urgência e emergência</td><td class="num">24 horas</td></tr>
+            <tr><td>Consulta, raio-x, prevenção (limpeza), diagnóstico</td><td class="num">30 dias</td></tr>
+            <tr><td>Cirurgia (ex.: extração) e restaurações</td><td class="num">90 dias</td></tr>
+            <tr><td>Gengiva (periodontia) e canal (endodontia)</td><td class="num">120 dias</td></tr>
+            <tr><td>Prótese do Rol da ANS e ATM / dor orofacial</td><td class="num">180 dias</td></tr>
+          </tbody>
+        </table></div>
+        <p>A contagem começa no início do plano. <b>Não têm cobertura</b> neste plano: aparelho (ortodontia), clareamento e estética, implantes e próteses fora do Rol.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Como encontro um dentista?</summary>
+      <div class="ans">
+        <p>Pelo app Amil Clientes, na rede credenciada, selecionando o plano odontológico. O Dental Bronze não tem reembolso: use só dentistas da rede.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ MEU PLANO ============ -->
+  <section class="group" id="meuplano">
+    <h2>Entendendo o meu plano</h2>
+
+    <details>
+      <summary>Quais são os planos e o que muda entre eles?</summary>
+      <div class="ans">
+        <div class="tbl"><table>
+          <thead><tr><th>Plano</th><th>Onde atende</th><th>Internação</th><th>Reembolso</th></tr></thead>
+          <tbody>
+            <tr><td>Bronze SP</td><td>Grupo de cidades</td><td>Quarto coletivo</td><td>Não</td></tr>
+            <tr><td>Bronze SP Mais</td><td>Grupo de cidades</td><td>Quarto coletivo</td><td>Não</td></tr>
+            <tr><td>Prata QC</td><td>Nacional</td><td>Quarto coletivo</td><td>Não</td></tr>
+            <tr><td>Prata QP</td><td>Nacional</td><td>Quarto privativo</td><td>Não</td></tr>
+            <tr><td>Ouro QC R</td><td>Nacional</td><td>Quarto coletivo</td><td>Sim</td></tr>
+          </tbody>
+        </table></div>
+        <p><b>QC</b> = quarto coletivo (enfermaria). <b>QP</b> = quarto privativo (apartamento). Todos incluem consultas, exames, terapias, internação e parto.</p>
+        <p>Se não houver leito do seu padrão disponível na rede, a Amil garante um leito superior sem custo extra.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>O plano Bronze atende em quais cidades?</summary>
+      <div class="ans">
+        <p>Os planos Bronze têm abrangência por <b>grupo de municípios</b>: a cobertura vale nas cidades e na rede definidas para o plano. Antes de agendar, confira no app quais hospitais e clínicas atendem o Bronze na sua região.</p>
+        <p>Para urgências fora dessa área, dentro do Brasil, existe a central de assistência (veja “Urgência ou emergência: para onde vou?”).</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>O plano é renovado todo ano? O valor muda?</summary>
+      <div class="ans">
+        <p>O contrato tem 12 meses de vigência inicial e se renova automaticamente, sem nova carência.</p>
+        <p>O valor pode mudar em duas situações:</p>
+        <ul>
+          <li><b>Reajuste anual:</b> uma vez por ano, no mês de aniversário do contrato, conforme as regras da ANS para empresas com menos de 30 vidas.</li>
+          <li><b>Mudança de faixa etária:</b> quando você ou um dependente faz aniversário e muda de faixa (por exemplo, de 38 para 39 anos), o valor é ajustado no mês seguinte.</li>
+        </ul>
+        <p>Quando houver reajuste que impacte o seu desconto em folha, o DP comunica.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>A Amil tem programas de saúde e descontos em farmácias?</summary>
+      <div class="ans">
+        <p><b>Desconto em farmácias:</b> clientes Amil têm desconto de <b>até 60% em medicamentos</b> em diversas redes de farmácias e drogarias, nas lojas físicas e nos sites delas. Na loja, é só informar o CPF e mostrar um documento com foto. O desconto varia por farmácia e por produto, e quem define é o parceiro.</p>
+        <p><b>Programas de Saúde Amil:</b> acompanhamento em diferentes especialidades, com foco em prevenção e tratamento.</p>
+        <p><b>Amil Espaço Saúde:</b> unidades com equipe de várias áreas que cuida da sua saúde de forma integrada, tudo no mesmo lugar. Antes de ir, confira no app se a unidade atende o seu plano.</p>
+        <p>Veja tudo na página de boas-vindas da Amil: <a href="https://cloud.info-amil.com.br/bemvindoamil" target="_blank" rel="noopener">Conheça seus benefícios</a>.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEPENDENTES / SAÍDA ============ -->
+  <section class="group" id="dependentes">
+    <h2>Dependentes, cancelamento e desligamento</h2>
+
+    <details>
+      <summary>Quem posso incluir como dependente?</summary>
+      <div class="ans">
+        <ul>
+          <li>Cônjuge ou companheiro(a), com certidão de casamento ou escritura de união estável;</li>
+          <li>Filhos(as), enteados(as), tutelados ou sob guarda, solteiros, até 24 anos;</li>
+          <li>Filhos com deficiência que impeça o próprio sustento, em qualquer idade.</li>
+        </ul>
+        <p>Pedidos de inclusão são feitos pelo DP. Fale com a gente em até <b>30 dias</b> do casamento, união, nascimento ou adoção.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Meu bebê nasceu. Como incluo no plano?</summary>
+      <div class="ans">
+        <p>Envie ao DP a certidão de nascimento em até <b>30 dias</b> do parto. Dentro desse prazo, o bebê aproveita as carências que você já cumpriu e não há alegação de doença preexistente. Depois de 30 dias, a inclusão passa a ter carência.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Posso cancelar o meu plano ou o de um dependente?</summary>
+      <div class="ans">
+        <p>Sim, o titular pode pedir a exclusão a qualquer momento, dele mesmo ou de um dependente. O pedido é feito <b>por escrito ao DP</b>, que tem até 30 dias para processar junto à Amil.</p>
+        <ul>
+          <li>Depois de processada, a exclusão vale na hora: a carteirinha deixa de funcionar.</li>
+          <li>Se o titular sair, os dependentes saem junto.</li>
+          <li>Se precisar voltar depois, a nova inclusão pode ter carência.</li>
+        </ul>
+        <p>Antes de decidir, converse com o DP para entender o impacto no seu desconto em folha.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>O que acontece com o plano se eu sair da empresa?</summary>
+      <div class="ans">
+        <p>O plano é vinculado ao seu contrato de trabalho e termina com o desligamento.</p>
+        <p>Se você for <b>dispensado sem justa causa ou se aposentar</b> e <b>contribuía com a mensalidade</b> do plano (desconto em folha), pode ter o direito de continuar no plano por um período, pagando o valor integral. O DP apresenta essa opção na comunicação do desligamento, e você tem até 30 dias para responder.</p>
+        <div class="note info"><strong>Bom saber</strong>Valores pagos só como coparticipação não contam como contribuição para esse direito.</div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ MATERIAIS ============ -->
+  <section class="group" id="materiais">
+    <h2>Materiais de apoio</h2>
+    <p class="intro">Toque para abrir.</p>
+    <div class="mats">
+      <a class="mat feat" href="https://youtu.be/ayLR6K9RaVI?si=hYI0B0mTb0Oto5xg" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor"/></svg></span>
+        <span class="tx"><b>Vídeo: como usar o app</b><small>Passo a passo da Amil, do primeiro acesso ao uso</small></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="mat" href="https://play.google.com/store/search?q=amil%20clientes&c=apps&hl=pt_BR&gl=US" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <span class="tx"><b>App Amil Clientes</b><small>Baixar no Android</small></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="mat" href="https://apps.apple.com/br/app/amil-clientes/id471890526" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <span class="tx"><b>App Amil Clientes</b><small>Baixar no iPhone</small></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="mat" href="https://cloud.info-amil.com.br/bemvindoamil" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <span class="tx"><b>Boas-vindas Amil</b><small>Benefícios, telemedicina, farmácias e canais</small></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="mat" href="https://www.amil.com.br" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        <span class="tx"><b>Site da Amil</b><small>Área do beneficiário e busca de rede</small></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ CONTATOS ============ -->
+  <section class="group" id="contatos">
+    <h2>Ficou com dúvida? Fale com o DP</h2>
+    <div class="contacts">
+      <div class="contact rh">
+        <h3>DP ElevaLife · Departamento Pessoal</h3>
+        <p>Dúvidas sobre o plano, inclusão e exclusão de dependentes, desconto em folha, carência e cancelamento.</p>
+        <div class="dp-links">
+          <a href="https://wa.me/5511990246860?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20plano%20Amil" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .8a4 4 0 0 1-2.2-2.2l.8-1-1-2Z" fill="currentColor"/></svg><span><small>WhatsApp</small>(11) 99024-6860</span></a>
+          <a href="mailto:gabrielepaes@elevalife.com.br?subject=D%C3%BAvida%20plano%20Amil"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><small>E-mail</small>gabrielepaes@elevalife.com.br</span></a>
+        </div>
+      </div>
+      <div class="contact">
+        <h3>Amil · SAC</h3>
+        <p>Rede, autorizações, reembolso e uso do app.</p>
+        <a class="big" href="tel:30041000">3004-1000</a>
+        <p>Capitais e regiões metropolitanas</p>
+        <p>Demais cidades: <a href="tel:08007062363">0800 706 2363</a><br>SAC: <a href="tel:08000212583">0800 021 2583</a><br>Deficiência auditiva: <a href="tel:08000211001">0800 021 1001</a></p>
+      </div>
+      <div class="contact">
+        <h3>Urgência fora da área (Bronze)</h3>
+        <p>Viagem dentro do Brasil, fora da área do plano.</p>
+        <a class="big" href="tel:08007779147">0800 777 9147</a>
+        <p>WhatsApp: <a href="https://wa.me/5511942318971" target="_blank" rel="noopener">(11) 94231-8971</a></p>
+      </div>
+      <div class="contact">
+        <h3>ANS</h3>
+        <p>Se a dúvida ou o problema não for resolvido pela Amil.</p>
+        <a class="big" href="tel:08007019656">0800 701 9656</a>
+        <p><a href="https://www.gov.br/ans" target="_blank" rel="noopener">gov.br/ans</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Guia criado pelo DP da ElevaLife com base na proposta e no contrato Amil 703 PME. Atualizado em 05/11/2026. Este material resume as principais regras; em caso de diferença, vale o contrato.
+  </footer>
+</main>
+
+<script>
+(function(){
+  var q=document.getElementById('q');
+  var groups=[].slice.call(document.querySelectorAll('.group'));
+  var empty=document.getElementById('empty');
+  function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+  var items=[].slice.call(document.querySelectorAll('.group details')).map(function(d){return {el:d,text:norm(d.textContent)};});
+  q.addEventListener('input',function(){
+    var term=norm(q.value.trim());
+    var any=false;
+    items.forEach(function(it){
+      var hit=!term||it.text.indexOf(term)>-1;
+      it.el.classList.toggle('hide',!hit);
+      if(term&&hit){it.el.open=true;any=true;}
+      if(!term){it.el.open=false;}
+    });
+    groups.forEach(function(g){
+      if(g.id==='contatos'){g.classList.remove('hide');return;}
+      var vis=g.querySelectorAll('details:not(.hide)').length;
+      g.classList.toggle('hide',!!term&&vis===0);
+    });
+    empty.classList.toggle('show',!!term&&!any);
+  });
+  // abrir pergunta ao chegar por link interno
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]');
+    if(!a)return;
+    var t=document.getElementById(a.getAttribute('href').slice(1));
+    if(t&&t.tagName==='SECTION'&&q.value){q.value='';q.dispatchEvent(new Event('input'));}
+  });
+})();
+</script>
+</body>
+</html>
